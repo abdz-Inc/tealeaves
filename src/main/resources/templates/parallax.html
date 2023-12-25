@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Pictures</title>
+    <style>
+        .parallax-section{
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+        }
+        .parallax-grid{
+            float:left;
+            width:33%;
+        }
+        .soil{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax-container">
+        <!-- Sections for parallax effect -->
+        <div class="parallax-section" data-rellax-speed="-5" >
+            <img class="soil" th:src="@{/images/soil2.jpg}">
+        </div>
+        <div class="parallax-section" data-rellax-speed="15" >
+            <div class = "parallax-grid"></div>
+            <img class = "parallax-grid" th:src="@{/images/sampling.jpg}">
+            <div class = "parallax-grid"></div>
+        </div>
+        <div class="parallax-section" data-rellax-speed="" >
+            <img class="soil" th:src="@{/images/many samplings.jpg}">
+        </div>
+        <!-- Add more sections as needed -->
+    </div>
+    <script th:src="@{/js/rellax-master/rellax.min.js}"></script>
+    <script>
+        var rellax = new Rellax('.parallax-section');
+    </script>
+</body>
+</html>
